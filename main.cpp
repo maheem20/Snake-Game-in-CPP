@@ -11,3 +11,13 @@ bool gameOver;          //Game over flag
 
 enum Direction { STOP = 0, LEFT, RIGHT, UP, DOWN };
 Direction dir;          //Current direction of the snake
+
+void setup() {
+    gameOver = false;
+    dir = STOP;
+    x = width / 2;
+    y = height / 2;
+    fruitX = rand() % width;
+    fruitY = rand() % height;
+    score = 0;
+}
