@@ -21,3 +21,38 @@ void setup() {
     fruitY = rand() % height;
     score = 0;
 }
+
+void draw()
+{
+    system("cls"); // Clear the console (Windows-specific)
+
+    for (int i = 0; i < width + 2; i++)
+        cout << "#";
+    cout << endl;
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            if (j == 0)
+                cout << "#";
+            if (i == y && j == x)
+                cout << "O";
+            else if (i == fruitY && j == fruitX)
+                cout << "F";
+            else
+                cout << " ";
+
+            if (j == width - 1)
+                cout << "#";
+        }
+        cout << endl;
+    }
+
+    for (int i = 0; i < width + 2; i++)
+        cout << "#";
+    cout << endl;
+
+    cout << "Score: " << score << endl;
+    cout << "Use WASD or arrow keys to control the snake." << endl;
+}
