@@ -119,3 +119,18 @@ void logic()
         fruitY = rand() % height;
     }
 }
+
+int main()
+{
+    setup();
+
+    while (!gameOver)
+    {
+        draw();
+        input();
+        logic();
+        // Add delay or frame rate control here
+    }
+
+    return 0;
+}
