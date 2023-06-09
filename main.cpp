@@ -56,3 +56,37 @@ void draw()
     cout << "Score: " << score << endl;
     cout << "Use WASD or arrow keys to control the snake." << endl;
 }
+
+void input()
+{
+    if (_kbhit()) // Check if a key is pressed
+    {
+        switch (_getch()) // Get the key pressed
+        {
+            case 'a':
+            case 'A':
+            case 75: // Left arrow
+                dir = LEFT;
+                break;
+            case 'd':
+            case 'D':
+            case 77: // Right arrow
+                dir = RIGHT;
+                break;
+            case 'w':
+            case 'W':
+            case 72: // Up arrow
+                dir = UP;
+                break;
+            case 's':
+            case 'S':
+            case 80: // Down arrow
+                dir = DOWN;
+                break;
+            case 'x':
+            case 'X':
+                gameOver = true;
+                break;
+        }
+    }
+}
